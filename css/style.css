@@ -1,0 +1,67 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto; 
+}
+
+.carousel {
+  height: 0;
+  overflow: hidden;
+  padding-top: calc(2 / 3 * 100%); /* Aspect ratio of carousel slides */
+  position: relative;
+}
+.carousel .slides-container,
+.carousel .navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel .turn-btn {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+.carousel .turn-btn.prev {
+  left:0;
+  justify-content: flex-start;
+}
+
+.carousel .turn-btn.next {
+  right:0;
+  justify-content: flex-end;
+}
+
+
+.carousel .turn-btn i {
+  padding: 1em;
+  color: rgba(255, 255, 255, .7);
+  font-size: 1.5em;
+  transition: .3s;
+}
+
+.carousel .turn-btn i:hover {
+  color: #fff;
+}
+
+.carousel .turn-btn.prev i:hover {
+  text-align: left;
+  transform: translateX(-.3em);
+}
+.carousel .turn-btn.next i:hover {
+  text-align: right;
+  transform: translateX(.3em);
+}
+
