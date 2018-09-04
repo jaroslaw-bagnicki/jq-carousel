@@ -19,14 +19,14 @@ const myCarousel = (function() {
   function init() {
     $(function() {
       data.images = $(`#${data.carouselId} img`); // Load images from document to array
-      data.imagesLength = data.images.length
+      data.imagesLength = data.images.length;
       $(`#${data.carouselId}`).empty().append(`
         <div class="slides-container"></div>
         <div class="navigation">
           <a href="#!" class="turn-btn prev"><i class="icon-chevron-left"></i></a>
           <a href="#!" class="turn-btn next"><i class="icon-chevron-right"></i></a>
         </div>
-      `)
+      `);
       const prevBtn = $('.prev');
       prevBtn.click(prevSlide);
       const nextBtn = $('.next');
@@ -34,7 +34,7 @@ const myCarousel = (function() {
       data.slidesContainer = $(`#${data.carouselId} .slides-container`);
       data.slidesContainer.append($(data.images[state.currIndex]));
       if (state.autoChange) setAutoChange();
-    }) 
+    });
   }
 
   // Load prev slide
@@ -44,12 +44,15 @@ const myCarousel = (function() {
 
   // Load next slide
   function nextSlide(e) {
-    oneStepTurn('next', e)
-  };
+    oneStepTurn('next', e);
+  }
 
   // Run auto change slides
   function setAutoChange() {
-    state.slideChangeInterval = setInterval(function() {turnSlide(calcIndex(1), 'next')}, 3000);
+    state.slideChangeInterval = setInterval(
+      function() {
+        turnSlide(calcIndex(1), 'next');
+      }, 3000);
   }
 
   // Toggle auto change slides
@@ -67,8 +70,11 @@ const myCarousel = (function() {
   // Calculates index of next image based on number of steps
   function calcIndex(steps) {
     let newIndex = state.currIndex + steps;
-    if (newIndex < 0) newIndex += data.imagesLength 
-      else if (newIndex >= data.imagesLength) newIndex -= (data.imagesLength);
+    if (newIndex < 0) {
+      newIndex += data.imagesLength;
+    } else if (newIndex >= data.imagesLength) {
+      newIndex -= (data.imagesLength);
+    }
     return newIndex;
   }
 
@@ -78,7 +84,7 @@ const myCarousel = (function() {
     const step = {
       'prev': -1,
       'next': 1
-    }
+    };
     if (!state.isAnimating) {
       turnSlide(calcIndex(step[direction]), direction);
       if (state.autoChange) {
@@ -116,12 +122,12 @@ const myCarousel = (function() {
   }
 
   return {
-    getState: function() {return state}, 
-    getData: function() {return data},
+    getState: function() {return state;}, 
+    getData: function() {return data;},
     prevSlide,
     nextSlide,
     toggleAutoChange
-  }
+  };
 })();
 
 

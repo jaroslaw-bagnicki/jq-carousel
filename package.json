@@ -1,0 +1,27 @@
+{
+  "name": "jq-carousel",
+  "version": "0.1.0",
+  "description": "carousel component implementation with jQuery",
+  "main": "carousel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jaroslaw-bagnicki/jq-carousel.git"
+  },
+  "author": "Jarosław Bagnicki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaroslaw-bagnicki/jq-carousel/issues"
+  },
+  "homepage": "https://github.com/jaroslaw-bagnicki/jq-carousel#readme",
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
